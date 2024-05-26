@@ -4,6 +4,7 @@ import { useState } from "react";
 // import { useRouter } from "next/router";
 
 import classes from "./page.module.css";
+import Link from "next/link";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -40,33 +41,41 @@ export default function LoginPage() {
   };
 
   return (
-    <div className={classes.container}>
-      <form onSubmit={handleSubmit} className={classes.form}>
-        <h2 className={classes["log-title"]}>Login</h2>
-        {/* <label htmlFor="email">Email:</label> */}
-        <input
-          className={classes.email}
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          placeholder="email@mail.com"
-        />
-        {/* <label htmlFor="password">Password:</label> */}
-        <input
-          className={classes.password}
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="pass****"
-          required
-        />
-        <button className={classes.btn} type="submit">
-          Login
-        </button>
-      </form>
-    </div>
+    <>
+      <div className={classes.container}>
+        <form onSubmit={handleSubmit} className={classes.form}>
+          <h2 className={classes["log-title"]}>Login</h2>
+          {/* <label htmlFor="email">Email:</label> */}
+          <input
+            className={classes.email}
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            placeholder="email@mail.com"
+          />
+          {/* <label htmlFor="password">Password:</label> */}
+          <input
+            className={classes.password}
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="pass****"
+            required
+          />
+          <button className={classes.btn} type="submit">
+            Login
+          </button>
+        </form>
+        <p>
+          Don&apos;t have an account{" "}
+          <Link className={classes.link} href="/auth/signup">
+            Sign Up
+          </Link>
+        </p>
+      </div>
+    </>
   );
 }
