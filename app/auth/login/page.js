@@ -3,7 +3,6 @@
 import { useState } from "react";
 // import { useRouter } from "next/router";
 
-import classes from "./page.module.css";
 import Link from "next/link";
 
 export default function LoginPage() {
@@ -42,12 +41,12 @@ export default function LoginPage() {
 
   return (
     <>
-      <div className={classes.container}>
-        <form onSubmit={handleSubmit} className={classes.form}>
-          <h2 className={classes["log-title"]}>Login</h2>
+      <div className="container">
+        <form onSubmit={handleSubmit} className="form" method="GET">
+          <h2 className="log-title">Login</h2>
           {/* <label htmlFor="email">Email:</label> */}
           <input
-            className={classes.email}
+            className="email"
             type="email"
             id="email"
             value={email}
@@ -57,7 +56,7 @@ export default function LoginPage() {
           />
           {/* <label htmlFor="password">Password:</label> */}
           <input
-            className={classes.password}
+            className="password"
             type="password"
             id="password"
             value={password}
@@ -65,13 +64,13 @@ export default function LoginPage() {
             placeholder="pass****"
             required
           />
-          <button className={classes.btn} type="submit">
+          <button className="btn" type="submit">
             Login
           </button>
         </form>
         <p>
           Don&apos;t have an account{" "}
-          <Link className={classes.link} href="/auth/signup">
+          <Link className="link" href="/auth/signup">
             Sign Up
           </Link>
         </p>

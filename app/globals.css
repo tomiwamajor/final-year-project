@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -104,4 +106,90 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.container {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.log-title {
+  font-weight: 700;
+  margin-bottom: 29px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.email:focus,
+.password:focus {
+  outline: none;
+  outline-offset: 1px;
+  box-shadow: 0 0 0 2px hsl(231, 7%, 60%);
+}
+
+.email {
+  margin-bottom: 16px;
+}
+
+.email,
+.password,
+.btn {
+  border: none;
+  padding: 10px;
+  transition: all 0.5s;
+}
+
+.password {
+  margin-bottom: 18px;
+}
+
+.btn {
+  /* padding: 15px; */
+  cursor: pointer;
+  font-size: 16px;
+  background-color: red;
+}
+
+.btn:hover {
+  background-color: rgba(0, 128, 0, 0.682);
+}
+
+.link {
+  color: red;
+}
+
+.link:hover {
+  color: rgba(0, 128, 0, 0.682);
+}
+
+.notfound,
+.error {
+  font-weight: 500;
+  color: #262626;
+  text-transform: uppercase;
+  background-color: #ddd8d8;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.notfound,
+.error {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ddd8d8;
 }
