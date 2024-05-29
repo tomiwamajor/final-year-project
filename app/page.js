@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import LoginPage from "./auth/login/page";
+import HomePage from "./homepage/page";
 
 export default function Home() {
-  return <LoginPage />;
+  return <HomePage />;
 }

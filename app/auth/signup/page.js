@@ -47,7 +47,6 @@ export default function SignUp() {
       <div className="container">
         <form onSubmit={handleSubmit} className="form" method="POST">
           <h2 className="log-title">Sign Up</h2>
-          {/* <label htmlFor="email">Email:</label> */}
 
           <input
             className="email"
@@ -78,7 +77,7 @@ export default function SignUp() {
             required
             placeholder="email@mail.com"
           />
-          {/* <label htmlFor="password">Password:</label> */}
+
           <input
             className="password"
             type="password"

@@ -44,7 +44,6 @@ export default function LoginPage() {
       <div className="container">
         <form onSubmit={handleSubmit} className="form" method="GET">
           <h2 className="log-title">Login</h2>
-          {/* <label htmlFor="email">Email:</label> */}
           <input
             className="email"
             type="email"
@@ -54,7 +53,7 @@ export default function LoginPage() {
             required
             placeholder="email@mail.com"
           />
-          {/* <label htmlFor="password">Password:</label> */}
+
           <input
             className="password"
             type="password"
@@ -62,8 +61,10 @@ export default function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="pass****"
+            minLength={6}
             required
           />
+
           <button className="btn" type="submit">
             Login
           </button>
