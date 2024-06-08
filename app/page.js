@@ -1,7 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
+
+import { ChakraProvider } from "@chakra-ui/react";
 import HomePage from "./homepage/page";
 
 export default function Home() {
-  return <HomePage />;
+  return <ChakraProvider>
+          <HomePage />
+        </ChakraProvider>
 }
