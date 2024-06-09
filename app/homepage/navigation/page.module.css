@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 75px;
-  background-color: black;
+  background-image: linear-gradient(to right, rgb(21, 112, 21),rgba(0, 128, 0, 0.651));
   color: #ffff;
 }
 

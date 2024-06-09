@@ -13,20 +13,32 @@
     gap: 10px;
     border: none;
 }
+
+.input {
+    font-size: 16px;
+    border: 1.2px solid green;
+    color: green;
+}
+
+.input:focus {
+    outline: none;
+    outline-offset: 1px;
+    box-shadow: 0 0 0 1px green;
+  }
     
 .input,.btn {
     padding: 9px;    
 }
 
 .btn {
-    background-color: rgba(0, 0, 0, 0.89);
+    background-image: linear-gradient(to right, rgb(21, 112, 21),rgba(0, 128, 0, 0.651));
     border: none;
     color: white;
     transition: all .3s ease;
     }
     
 .btn:hover {
-    background-color: black;
+    background-image: linear-gradient(to right,rgba(0, 128, 0, 0.651), rgb(21, 112, 21));
     transition: all .3s ease;
 }
 
@@ -36,13 +48,13 @@
 }
 
 .link {
-    background-color: rgba(0, 0, 0, 0.89);
+    background-image: linear-gradient(to right, rgb(21, 112, 21),rgba(0, 128, 0, 0.651));
     color: white;
     padding: 4px 20px;
     transition: all .3s ease;
 }
 
 .link:hover {
-    background-color: black;
+    background-image: linear-gradient(to right,rgba(0, 128, 0, 0.651), rgb(21, 112, 21));
     transition: all .3s ease;
 }

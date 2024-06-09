@@ -63,7 +63,7 @@ export default function LoginPage() {
           />
 
           <button className={classes.btn} type="submit">
-            Login
+            Register
           </button>
         </form>
         <p className={classes.text}>
