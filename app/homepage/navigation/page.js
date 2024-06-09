@@ -5,9 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import logoImg from "@/assets/fav.png";
 
-
-
-
 export default function NavSection() {
   return (
     <>

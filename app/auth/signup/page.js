@@ -1,75 +1,48 @@
-// pages/login.js
 "use client";
+
 import { useState } from "react";
-// import { useRouter } from "next/router";
-
-// import classes from "./page.module.css";
 import Link from "next/link";
+import classes from "@/components/authStyle.module.css"
 
-export default function SignUp() {
+export default function LoginPage() {
   const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
-  // const router = useRouter();
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Add your authentication logic here.
-    // For example, you might send a request to your backend API.
-    // Example:
-    // const response = await fetch('/api/login', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ email, password }),
-    // });
-
-    // const data = await response.json();
-
-    // if (data.success) {
-    //   // Redirect to a different page on successful login
-    //   router.push('/dashboard');
-    // } else {
-    //   // Handle login failure
-    //   alert('Login failed');
-    // }
-
-    // For demonstration, we'll just log the email and password.
-    console.log({ firstName, lastName, email, password });
-    // router.push("/dashboard"); // Redirect to dashboard or other page
+    console.log({ email, password, firstName });
   };
 
   return (
     <>
-      <div className="container">
-        <form onSubmit={handleSubmit} className="form" method="POST">
-          <h2 className="log-title">Sign Up</h2>
+      <div className={classes.container}>
+        <form onSubmit={handleSubmit} className={classes.form} method="POST">
+          <h2 className="log-title">Sign up</h2>
 
           <input
-            className="email"
+            className={classes.input}
             type="text"
-            id="firstName"
+            id="first name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             required
-            placeholder="First name"
+            placeholder="first name"
           />
 
           <input
-            className="email"
+            className={classes.input}
             type="text"
-            id="lastName"
+            id="last name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             required
-            placeholder="Last name"
+            placeholder="last name"
           />
 
           <input
-            className="email"
+            className={classes.input}
             type="email"
             id="email"
             value={email}
@@ -79,21 +52,23 @@ export default function SignUp() {
           />
 
           <input
-            className="password"
+            className={classes.input}
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="pass****"
+            placeholder="password"
+            minLength={6}
             required
           />
-          <button className="btn" type="submit">
-            Create Account
+
+          <button className={classes.btn} type="submit">
+            Login
           </button>
         </form>
-        <p>
-          Already have an account{" "}
-          <Link className="link" href="/auth/login">
+        <p className={classes.text}>
+          Have an account already{" "}
+          <Link className={classes.link} href="/auth/login">
             Login
           </Link>
         </p>

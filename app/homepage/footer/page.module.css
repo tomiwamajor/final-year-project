@@ -3,8 +3,6 @@
   text-decoration: none;
   color: #ddd6cb;
   font-weight: bold;
-  font-family: "Inter", sans-serif;
-  /* letter-spacing: 0.15rem; */
   text-transform: uppercase;
   font-size: 15px;
 }
@@ -18,8 +16,8 @@
 
 .footer-background {
   padding: 20px;
-  color: black;
-  background-color: whitesmoke;
+  color: white;
+  background-color: black;
 }
 
 .grid-body {
@@ -41,13 +39,6 @@
   gap: 17px;
   font-family: "Inter", sans-serif;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  text-shadow: 0 0 18px rgba(248, 190, 42, 0.8);
-}
-
-.unordered li:hover,
-.unordered li:active {
-  color: green;
   transition: all 0.5s ease-in-out;
 }
 

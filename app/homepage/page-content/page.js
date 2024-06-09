@@ -1,7 +1,7 @@
-import classes from "./page.module.css";
+import { Box, Text } from "@chakra-ui/react";
 
 export default function PageContent() {
   return (
-    <p className={classes.backbody}>This contains the contents of the page</p>
+    <Box><Text>Lorem content</Text></Box>
   );
 }

@@ -3,5 +3,9 @@ import NavSection from "./navigation/page";
 import PageContent from "./page-content/page";
 
 export default function HomePage() {
-  return <NavSection />;
+  return <>
+    <NavSection /> 
+    <PageContent/>
+    <Foot/>
+  </>
 }
