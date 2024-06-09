@@ -14,6 +14,7 @@ export default function LoginPage() {
     e.preventDefault();
     console.log({ email, password, firstName });
   };
+  
 
   return (
     <>
