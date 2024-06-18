@@ -1,4 +1,14 @@
-import { Box, Text, Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Divider, ButtonGroup, Button, Flex } from "@chakra-ui/react";
+import { Box, 
+  Text, 
+  Card, 
+  CardBody, 
+  CardFooter, 
+  Stack, 
+  Heading, 
+  Divider, 
+  ButtonGroup, 
+  Button,
+  SimpleGrid } from "@chakra-ui/react";
 import ChakraNextImage from "@/components/chakra-nextimage";
 import chair1 from '@/public/images/chair-1.jpg'
 import chair2 from '@/public/images/chair-2.jpg'
@@ -7,9 +17,8 @@ import chair3 from '@/public/images/chair-3.jpg'
 export default function PageContent() {
   return (
     <>
-      <Box display={'flex'} flexDir={'column'} justifyContent={'center'} margin={'0 auto'} maxW={'1000px'}>
-        <Flex>
-          <Card maxW='sm'>
+      <SimpleGrid spacing={10} templateColumns='repeat(auto-fill, minmax(400px, 1fr))'>
+          <Card>
             <CardBody>
               <Heading w={'100%'}>
                 <ChakraNextImage
@@ -44,7 +53,7 @@ export default function PageContent() {
             </CardFooter>
           </Card>
 
-          <Card maxW='sm'>
+          <Card>
           <CardBody>
             <Heading w={'100%'}>
               <ChakraNextImage
@@ -79,7 +88,7 @@ export default function PageContent() {
           </CardFooter>
           </Card>
 
-          <Card maxW='sm'>
+          <Card>
           <CardBody>
             <Heading w={'100%'}>
               <ChakraNextImage
@@ -113,10 +122,8 @@ export default function PageContent() {
             </ButtonGroup>
           </CardFooter>
           </Card>
-        </Flex>
 
-        <Flex>
-          <Card maxW='sm'>
+          <Card>
             <CardBody>
               <Heading w={'100%'}>
                 <ChakraNextImage
@@ -151,7 +158,7 @@ export default function PageContent() {
             </CardFooter>
           </Card>
 
-          <Card maxW='sm'>
+          <Card>
           <CardBody>
             <Heading w={'100%'}>
               <ChakraNextImage
@@ -186,7 +193,7 @@ export default function PageContent() {
           </CardFooter>
           </Card>
 
-          <Card maxW='sm'>
+          <Card>
           <CardBody>
             <Heading w={'100%'}>
               <ChakraNextImage
@@ -220,10 +227,8 @@ export default function PageContent() {
             </ButtonGroup>
           </CardFooter>
           </Card>
-        </Flex>
 
-        <Flex>
-          <Card maxW='sm'>
+          <Card>
             <CardBody>
               <Heading w={'100%'}>
                 <ChakraNextImage
@@ -258,7 +263,7 @@ export default function PageContent() {
             </CardFooter>
           </Card>
 
-          <Card maxW='sm'>
+          <Card>
           <CardBody>
             <Heading w={'100%'}>
               <ChakraNextImage
@@ -293,7 +298,7 @@ export default function PageContent() {
           </CardFooter>
           </Card>
 
-          <Card maxW='sm'>
+          <Card>
           <CardBody>
             <Heading w={'100%'}>
               <ChakraNextImage
@@ -327,8 +332,7 @@ export default function PageContent() {
             </ButtonGroup>
           </CardFooter>
           </Card>
-        </Flex>
-      </Box>
+      </SimpleGrid>
     </>
   );
 }
