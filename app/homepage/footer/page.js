@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logoImg from "@/assets/fav.png";
+import logoImg from "@/public/icons/icon-144.png";
 import classes from "./page.module.css";
 
 export default function Foot() {
