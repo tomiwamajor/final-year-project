@@ -17,7 +17,7 @@ import chair3 from '@/public/images/chair-3.jpg'
 export default function PageContent() {
   return (
     <>
-      <SimpleGrid spacing={9} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
+      <SimpleGrid spacing={9} minChildWidth={350}>
           <Card>
             <CardBody>
               <Heading w={'100%'}>
