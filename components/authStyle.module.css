@@ -27,20 +27,17 @@
   }
     
 .input,.btn {
-    padding: 9px;    
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 17px;
 }
 
 .btn {
     background-image: linear-gradient(to right, rgb(21, 112, 21),rgba(0, 128, 0, 0.651));
     border: none;
     color: white;
-    transition: all .3s ease;
     }
-    
-.btn:hover {
-    background-image: linear-gradient(to right,rgba(0, 128, 0, 0.651), rgb(21, 112, 21));
-    transition: all .3s ease;
-}
+
 
 .text {
     margin-top: 7px;
@@ -48,13 +45,5 @@
 }
 
 .link {
-    background-image: linear-gradient(to right, rgb(21, 112, 21),rgba(0, 128, 0, 0.651));
-    color: white;
-    padding: 4px 20px;
-    transition: all .3s ease;
-}
-
-.link:hover {
-    background-image: linear-gradient(to right,rgba(0, 128, 0, 0.651), rgb(21, 112, 21));
-    transition: all .3s ease;
+    color: black;
 }

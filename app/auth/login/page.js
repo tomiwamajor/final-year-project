@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import ChakraNextImage from '@/components/chakra-nextimage';
+import { Box } from "@chakra-ui/react";
+import img from '@/public/icons/icon-384.png'
 import classes from "@/components/authStyle.module.css"
 
 export default function LoginPage() {
@@ -17,7 +20,15 @@ export default function LoginPage() {
     <>
       <div className={classes.container}>
         <form onSubmit={handleSubmit} className={classes.form} method="GET">
-          <h2 className="log-title">Login</h2>
+          <Box width={'50%'}>
+              <ChakraNextImage
+                src={img}
+                quality={100}
+                alt='img logo'
+                width={'100%'}
+                aspectRatio={'1/1'}
+              />
+            </Box>
           <input
             className={classes.input}
             type="email"
