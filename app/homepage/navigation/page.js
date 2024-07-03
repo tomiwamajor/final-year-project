@@ -9,9 +9,9 @@ export default function NavSection() {
   return (
     <>
       <header className={classes.header}>
-        <Link className={classes.logo} href="/">
+        {/* <Link className={classes.logo} href="/">
           <Image src={logoImg} alt="Logo of the organization" priority />
-        </Link>
+        </Link> */}
 
         <nav className={classes.nav}>
           <ul>

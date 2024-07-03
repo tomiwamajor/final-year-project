@@ -17,7 +17,7 @@ import chair3 from '@/public/images/chair-3.jpg'
 export default function PageContent() {
   return (
     <>
-      <SimpleGrid spacing={10} templateColumns='repeat(auto-fill, minmax(400px, 1fr))'>
+      <SimpleGrid spacing={9} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
           <Card>
             <CardBody>
               <Heading w={'100%'}>
@@ -28,7 +28,7 @@ export default function PageContent() {
                   aspectRatio={'1/1'}
                 />
               </Heading>
-              <Stack mt='6' spacing='3'>
+              <Stack mt='6' spacing='1'>
                 <Heading size='md'>Living room Sofa</Heading>
                 <Text>
                   This sofa is perfect for modern tropical spaces, baroque inspired

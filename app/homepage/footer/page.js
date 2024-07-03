@@ -8,15 +8,15 @@ export default function Foot() {
     <>
       <footer className={classes["footer-background"]}>
         <div className={classes["grid-body"]}>
-          <div>
+          {/* <div>
             <Link className={classes.logo} href="/">
               <Image src={logoImg} alt="Logo of the organization" priority />
             </Link>
-          </div>
+          </div> */}
 
           {/* contacting */}
           <div className={classes["grid-divide"]}>
-            <ul className={classes.unordered}>
+            {/* <ul className={classes.unordered}>
               <li className={classes["footer-header"]}>Contact Us</li>
               <li>University of Ilorin</li>
               <li>
@@ -27,7 +27,7 @@ export default function Foot() {
                   adetomiwaadelekun@gmail.com
                 </Link>
               </li>
-            </ul>
+            </ul> */}
 
             {/* account creation */}
             <ul className={classes.unordered}>
