@@ -1,13 +1,16 @@
 import NavSection from "../homepage/navigation/page";
-import classes from "./page.module.css";
+import {Box, Text} from "@chakra-ui/react"
 
 export default function Cart() {
+  const text = {
+    
+  }
   return (
     <>
-      <NavSection />
-      <main className={classes["cart-container"]}>
-        Cart development is under construction
-      </main>
+      <Box>
+        <NavSection/>
+        <Text sx={text}>The cart section is under construction</Text>
+      </Box>
     </>
   );
 }
