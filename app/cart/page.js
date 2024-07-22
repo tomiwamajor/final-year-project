@@ -1,5 +1,5 @@
-import NavSection from "../homepage/navigation/page";
-import {Box, Text} from "@chakra-ui/react"
+// import NavSection from "../homepage/navigation/page";
+import {Text} from "@chakra-ui/react"
 
 export default function Cart() {
   const text = {
@@ -7,10 +7,7 @@ export default function Cart() {
   }
   return (
     <>
-      <Box>
-        <NavSection/>
-        <Text sx={text}>The cart section is under construction</Text>
-      </Box>
+      <Text sx={text}>The cart section is under construction</Text>
     </>
   );
 }
