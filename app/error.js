@@ -1,9 +1,7 @@
 "use client";
+import { Text } from "@chakra-ui/react";
 export default function Error() {
   return (
-    <main>
-      <h1>An error occured</h1>
-      <p>Failed to get resources</p>
-    </main>
+    <Text>Section does not exist</Text>
   );
 }
