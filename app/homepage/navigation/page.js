@@ -1,8 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import logoImg from "@/public/icons/icon-144.png";
 import { Flex, Button, IconButton } from "@chakra-ui/react";
 import { useState } from "react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
