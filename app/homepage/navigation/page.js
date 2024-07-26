@@ -22,7 +22,7 @@ export default function NavSection() {
             <Button as="a" 
               variant='ghost' 
               aria-label='Home' 
-              my={5} 
+              my={5}
               w='100%'>
               Home
             </Button>
@@ -49,7 +49,8 @@ export default function NavSection() {
 
         <IconButton aria-label='Open Menu' 
         size='lg' 
-        mr={2} 
+        ml={5}
+        mt={3} 
         icon={<HamburgerIcon/>} 
         display={['flex', 'flex', 'none', 'none']} 
         onClick={()=>changeDisplay('flex')}/>
@@ -66,7 +67,8 @@ export default function NavSection() {
           display={display}>
           <Flex justify={'flex-end'}>
             <IconButton mt={2} 
-              mr={2} 
+              mr={5}
+              marginTop={3} 
               aria-label="Close Menu" 
               size={'lg'} 
               icon={<CloseIcon/>} 

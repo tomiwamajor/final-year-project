@@ -39,7 +39,7 @@ export default function LoginPage() {
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             required
-            placeholder="first name"
+            placeholder="First Name"
           />
 
           <input
@@ -49,7 +49,7 @@ export default function LoginPage() {
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             required
-            placeholder="last name"
+            placeholder="Last Name"
           />
 
           <input
@@ -68,7 +68,7 @@ export default function LoginPage() {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="password"
+            placeholder="Password"
             minLength={6}
             required
           />
