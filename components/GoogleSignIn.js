@@ -2,9 +2,6 @@ import React from 'react';
 import { signInWithPopup } from '../lib/firebaseConfig';
 import { auth, provider } from '../lib/firebaseConfig';
 import { Container, Button } from '@chakra-ui/react';
-import ChakraNextImage from './chakra-nextimage';
-import { Box } from '@chakra-ui/react';
-import google from "@/public/icons/google.png"
 
 const GoogleSignIn = () => {
   const handleSignIn = async () => {
