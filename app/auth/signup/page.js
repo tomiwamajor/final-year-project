@@ -5,17 +5,32 @@ import Link from "next/link";
 import ChakraNextImage from '@/components/chakra-nextimage';
 import classes from "@/components/authStyle.module.css"
 import img from '@/public/icons/icon-384.png'
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
+import { auth } from "@/lib/firebaseConfig"; 
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
-export default function LoginPage() {
+export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ email, password, firstName });
+    setLoading(true);
+    setError('');
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert('Sign up successful!');
+      setEmail('');
+      setPassword('');
+    } catch (err) {
+      console.log('Error signing up:', err);
+      setError(err.message);
+    }
+    setLoading(false);
   };
   
 
@@ -73,9 +88,10 @@ export default function LoginPage() {
             required
           />
 
-          <button className={classes.btn} type="submit">
-            Register
+          <button className={classes.btn} type="submit" disabled={loading}>
+            {loading ? "Signing up..." : "Sign Up"}
           </button>
+          {error && <Text>Error: {error}</Text>}
         </form>
         <p className={classes.text}>
           Have an account already{" "}

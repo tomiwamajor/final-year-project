@@ -36,6 +36,7 @@
     background-image: linear-gradient(to right, rgb(21, 112, 21),rgba(0, 128, 0, 0.651));
     border: none;
     color: white;
+    cursor: pointer;
     }
 
 

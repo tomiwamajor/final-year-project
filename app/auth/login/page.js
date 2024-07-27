@@ -3,17 +3,26 @@
 import { useState } from "react";
 import Link from "next/link";
 import ChakraNextImage from '@/components/chakra-nextimage';
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import img from '@/public/icons/icon-384.png'
 import classes from "@/components/authStyle.module.css"
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/lib/firebaseConfig";
+import Head from "next/head";
+import GoogleSignIn from "@/components/GoogleSignIn";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ email, password });
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log('Signed in Successfully');
+    } catch (error) {
+      console.log('Error signing in:', error)
+    }
   };
 
   return (
@@ -60,6 +69,13 @@ export default function LoginPage() {
             Sign Up
           </Link>
         </p>
+
+        <Head>
+          <link rel="icon" href="/public/icons/icon-64.png"/>
+        </Head>
+        <main>
+          <GoogleSignIn/>
+        </main>
       </div>
     </>
   );
