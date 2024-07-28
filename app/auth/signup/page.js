@@ -8,6 +8,7 @@ import img from '@/public/icons/icon-384.png'
 import { Box, Text } from "@chakra-ui/react";
 import { auth } from "@/lib/firebaseConfig"; 
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -16,6 +17,7 @@ export default function SignUp() {
   const [lastName, setLastName] = useState('')
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +28,7 @@ export default function SignUp() {
       alert('Sign up successful!');
       setEmail('');
       setPassword('');
+      router.push('/')
     } catch (err) {
       console.log('Error signing up:', err);
       setError(err.message);
