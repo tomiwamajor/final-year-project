@@ -97,7 +97,7 @@ const Cart = () => {
                 <Text fontSize="sm" color="gray.600">Quantity: {item.quantity}</Text>
                 <Text fontSize="sm" color="gray.600">Price: {item.amount}</Text>
                 <Text fontWeight="bold">
-                  Total: ${formatNumber(Number(item.amount.replace(/,/g, '')) * Number(item.quantity))}
+                  Total: #{formatNumber(Number(item.amount.replace(/,/g, '')) * Number(item.quantity))}
                 </Text>
               </Stack>
             </Box>
