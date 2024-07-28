@@ -1,8 +1,11 @@
 "use client"
 
 import { Text, Card, CardBody, CardFooter, Stack, Heading, Divider, ButtonGroup, Button,SimpleGrid } from "@chakra-ui/react";
-import { collection, getDocs, getFirestore, query } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, doc, setDoc } from "firebase/firestore";
 import React, {useState, useEffect} from "react"
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useRouter } from 'next/navigation';
+
 import ChakraNextImage from "@/components/chakra-nextimage";
 import app from "@/firebase.config"
 // import { useCart } from "@/context/CartContext";
@@ -12,6 +15,9 @@ export default function PageContent() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const db = getFirestore(app);
+  const [user, setUser] = useState(null);
+
+  const cartcontent = []
   // const {addToCart} = useCart();
 
   useEffect(() => {
@@ -39,9 +45,47 @@ export default function PageContent() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const auth = getAuth(app);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   if (isLoading) {
     return <Text>Loading products...</Text>;
   }
+
+  const router = useRouter();
+
+  const addToCart = async (product) => {
+    if (!user) {
+      // Redirect to login if user is not logged in
+      router.push('/login');
+      return;
+    }
+
+    try {
+      const colRef = collection(db, "Cart");
+      const docRef = doc(colRef, product.id);
+      await setDoc(docRef, {
+        cartId: product.id,
+        userId: user.uid,
+        quantity: 1,
+        amount: product.price,
+        sold: false,
+        ...product
+      });
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+    }
+  };
 
   return (
     <>
@@ -73,11 +117,7 @@ export default function PageContent() {
                 </Button>
                 <Button variant='ghost' 
                 colorScheme='green' 
-                onClick={()=> {
-                  const cartcontent = []
-                  cartcontent.push(`${product.Title}`)
-                  console.log(cartcontent)
-                }}>
+                onClick={() => addToCart(product)}>
                   Add to cart
                 </Button>
               </ButtonGroup>
