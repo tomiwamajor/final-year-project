@@ -16,9 +16,9 @@ export default function PageContent() {
   const [isLoading, setIsLoading] = useState(true);
   const db = getFirestore(app);
   const [user, setUser] = useState(null);
+  const router = useRouter()
 
   const cartcontent = []
-  // const {addToCart} = useCart();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,8 +61,6 @@ export default function PageContent() {
   if (isLoading) {
     return <Text>Loading products...</Text>;
   }
-
-  const router = useRouter();
 
   const addToCart = async (product) => {
     if (!user) {
