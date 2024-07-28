@@ -1,29 +1,34 @@
 "use client"
 
-import { Text } from "@chakra-ui/react"
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
-export default function cartcontent() {
-  return <Text>cart content</Text>
-}
+const CartContext = createContext();
 
-// import React, { createContext, useContext, useState } from 'react';
+export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
 
-// const CartContext = createContext();
+  useEffect(() => {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
 
-// export const CartProvider = ({ children }) => {
-//   const [cart, setCart] = useState([]);
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
-//   const addToCart = (product) => {
-//     setCart((prevCart) => [...prevCart, product]);
-//   };
+  const addToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
 
-//   return (
-//     <CartContext.Provider value={{ cart, addToCart }}>
-//       {children}
-//     </CartContext.Provider>
-//   );
-// };
+  return (
+    <CartContext.Provider value={{ cart, addToCart }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
 
-// export const useCart = () => {
-//   return useContext(CartContext);
-// };
+export const useCart = () => {
+  return useContext(CartContext);
+};

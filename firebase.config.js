@@ -4,13 +4,13 @@ import {getAuth, signInWithPopup} from "firebase/auth";
 import { Firestore, getFirestore } from "firebase/firestore";
 import {getDatabase} from "firebase/database"
 const firebaseConfig = {
-    apiKey: "AIzaSyD03HhbFeL0bNtj2e9tt8vQcMk9mlMto_c",
-    authDomain: "final-year-ba148.firebaseapp.com",
-    projectId: "final-year-ba148",
-    storageBucket: "final-year-ba148.appspot.com",
-    messagingSenderId: "137391846086",
-    appId: "1:137391846086:web:91103984f243e6341addc7"
-  };
+  apiKey: "AIzaSyC7Q7bU01oGcdaj0Q7s1dl6xwo2Rj8NiVo",
+  authDomain: "project-backup-38c2a.firebaseapp.com",
+  projectId: "project-backup-38c2a",
+  storageBucket: "project-backup-38c2a.appspot.com",
+  messagingSenderId: "512961077474",
+  appId: "1:512961077474:web:5e831f95fdd5b4425a7ebb"
+};
 
 const app = initializeApp(firebaseConfig);
 

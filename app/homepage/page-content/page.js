@@ -18,7 +18,7 @@ export default function PageContent() {
     const fetchData = async () => {
       try {
         const colRef = collection(db, "Products");
-        const q = query(colRef); // Adjust query as needed
+        const q = query(colRef); 
         const querySnapshot = await getDocs(q);
     
         const productData = []
@@ -37,7 +37,7 @@ export default function PageContent() {
     };
 
     fetchData();
-  }, );
+  }, []);
 
   if (isLoading) {
     return <Text>Loading products...</Text>;
@@ -51,7 +51,7 @@ export default function PageContent() {
             <CardBody>
               <Heading w={'100%'}>
                 <ChakraNextImage
-                  src={product.image || chair1} // Use product image if available
+                  src={product.image} // Use product image if available
                   quality={100}
                   alt={product.name || "Product Image"}
                   aspectRatio={'1/1'}

@@ -21,7 +21,8 @@
     "paystack-api": "^2.0.6",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.51.5"
+    "react-hook-form": "^7.51.5",
+    "use-shopping-cart": "^3.2.0"
   },
   "devDependencies": {
     "eslint": "^8",
