@@ -51,7 +51,7 @@ export default function PageContent() {
             <CardBody>
               <Heading w={'100%'}>
                 <ChakraNextImage
-                  src={product.image} // Use product image if available
+                  src={product.image} 
                   quality={100}
                   alt={product.name || "Product Image"}
                   aspectRatio={'1/1'}
@@ -61,7 +61,7 @@ export default function PageContent() {
                 <Heading size='md'>{product.Title || "Product Name"}</Heading>
                 <Text>{product.description || "Product Description"}</Text>
                 <Text color='green' fontSize='2xl'>
-                  ${product.price || "0.00"}
+                  #{product.price || "0.00"}
                 </Text>
               </Stack>
             </CardBody>
@@ -73,8 +73,11 @@ export default function PageContent() {
                 </Button>
                 <Button variant='ghost' 
                 colorScheme='green' 
-                // onClick={() => { addToCart(product)}}
-                >
+                onClick={()=> {
+                  const cartcontent = []
+                  cartcontent.push(`${product.Title}`)
+                  console.log(cartcontent)
+                }}>
                   Add to cart
                 </Button>
               </ButtonGroup>

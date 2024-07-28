@@ -1,34 +1,38 @@
-"use client"
+// // context/CartContext.js
+// import { createContext, useContext, useState } from "react";
+// import { collection, addDoc, updateDoc, doc, getDocs, query, where } from "firebase/firestore";
+// import { db } from "@/firebase.config";
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+// const CartContext = createContext();
 
-const CartContext = createContext();
+// export const CartProvider = ({ children }) => {
+//   const [cart, setCart] = useState([]);
+//   const [selectedProduct, setSelectedProduct] = useState(null);
 
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+//   const addToCart = async (productId, quantity, userId) => {
+//     try {
+//       const cartCollection = collection(db, "cart");
+//       const q = query(cartCollection, where("productId", "==", productId), where("userId", "==", userId));
+//       const querySnapshot = await getDocs(q);
 
-  useEffect(() => {
-    const storedCart = localStorage.getItem('cart');
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
-    }
-  }, []);
+//       if (querySnapshot.empty) {
+//         await addDoc(cartCollection, { productId, quantity, userId });
+//       } else {
+//         querySnapshot.forEach(async (document) => {
+//           const cartItemDoc = doc(db, "Cart", document.id);
+//           await updateDoc(cartItemDoc, { quantity: document.data().quantity + quantity });
+//         });
+//       }
+//     } catch (error) {
+//       console.error("Error adding to cart: ", error);
+//     }
+//   };
 
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
+//   return (
+//     <CartContext.Provider value={{ cart, addToCart, selectedProduct, setSelectedProduct }}>
+//       {children}
+//     </CartContext.Provider>
+//   );
+// };
 
-  const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
-  };
-
-  return (
-    <CartContext.Provider value={{ cart, addToCart }}>
-      {children}
-    </CartContext.Provider>
-  );
-};
-
-export const useCart = () => {
-  return useContext(CartContext);
-};
+// export const useCart = () => useContext(CartContext);
