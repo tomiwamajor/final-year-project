@@ -6,7 +6,7 @@ import ChakraNextImage from '@/components/chakra-nextimage';
 import classes from "@/components/authStyle.module.css"
 import img from '@/public/icons/icon-384.png'
 import { Box, Text } from "@chakra-ui/react";
-import { auth } from "@/lib/firebaseConfig"; 
+import { auth } from "/firebase.config"; 
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 

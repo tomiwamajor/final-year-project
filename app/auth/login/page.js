@@ -7,7 +7,7 @@ import { Box, Text, useToast } from "@chakra-ui/react";
 import img from '@/public/icons/icon-384.png'
 import classes from "@/components/authStyle.module.css"
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/lib/firebaseConfig";
+import { auth } from "/firebase.config";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
