@@ -28,3 +28,11 @@
 //     </Box>
 //   );
 // }
+
+'use client'
+
+import { Text } from "@chakra-ui/react"
+
+export default function cart() {
+  return <Text>cart section</Text>
+}

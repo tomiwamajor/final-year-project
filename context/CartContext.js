@@ -1,4 +1,10 @@
-// "use client"
+"use client"
+
+import { Text } from "@chakra-ui/react"
+
+export default function cartcontent() {
+  return <Text>cart content</Text>
+}
 
 // import React, { createContext, useContext, useState } from 'react';
 
