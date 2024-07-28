@@ -67,7 +67,7 @@ export default function PageContent() {
   const addToCart = async (product) => {
     if (!user) {
       // Redirect to login if user is not logged in
-      router.push('/login');
+      router.push('/auth/login');
       return;
     }
 
