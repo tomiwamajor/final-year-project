@@ -5,14 +5,14 @@ import { collection, getDocs, getFirestore, query } from "firebase/firestore";
 import React, {useState, useEffect} from "react"
 import ChakraNextImage from "@/components/chakra-nextimage";
 import app from "@/firebase.config"
-import { useCart } from "@/context/CartContext";
+// import { useCart } from "@/context/CartContext";
 
 
 export default function PageContent() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const db = getFirestore(app);
-  const {addToCart} = useCart();
+  // const {addToCart} = useCart();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +37,7 @@ export default function PageContent() {
     };
 
     fetchData();
-  }, []);
+  }, );
 
   if (isLoading) {
     return <Text>Loading products...</Text>;
@@ -73,7 +73,7 @@ export default function PageContent() {
                 </Button>
                 <Button variant='ghost' 
                 colorScheme='green' 
-                onClick={() => { addToCart(product)}}
+                // onClick={() => { addToCart(product)}}
                 >
                   Add to cart
                 </Button>
