@@ -1,6 +1,5 @@
 "use client"
-// components/Cart.js
-import { Box, Text, Stack, Heading, Divider, Button, Flex, Container } from '@chakra-ui/react';
+import { Box, Text, Stack, Heading, Button, Flex, Container } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { collection, query, where, getDocs, getFirestore, deleteDoc } from 'firebase/firestore';
 import app from "@/firebase.config"
@@ -67,18 +66,18 @@ const Cart = () => {
 
   return (
    <>
-    <NavSection />
+    {/* <NavSection /> */}
     <Container mt={5}
       mb={10}
       ml={10}
       mr={10}>
-      <Text>Your Cart</Text>
+      <Text textAlign={'center'}>Your Cart</Text>
       {cart.length === 0 ? (
-        <Text>No items in the cart.</Text>
+        <Text textAlign={'center'}>No items in the cart.</Text>
       ) : (
         <Stack spacing={4}>
           {cart.map((item, index) => (
-            <Box>
+            <Box
               key={item.id} 
               p={4} 
               borderWidth='1px' 
@@ -88,27 +87,36 @@ const Cart = () => {
             >
               <Flex justifyContent="space-between" alignItems="center">
                 <Heading size='md'>{item.Title}</Heading>
-                <Button 
-                  colorScheme='red' 
-                  fontSize={14} 
-                  onClick={() => removeFromCart(item.cartId)}
+                <Button
+                backgroundColor={'green'}
+                cursor={'pointer'}
+                pt={10}
+                pb={10}
+                pl={20}
+                pr={20}
+                color={'white'}
+                borderRadius={10}
+                border={'none'}
+                fontSize={14} 
+                onClick={() => removeFromCart(item.cartId)}
                 >
                   Remove
                 </Button>
               </Flex>
               <Stack mt={2} spacing={1}>
-                <Text fontSize={12} color={'black'}>Quantity: {item.quantity}</Text>
-                <Text fontSize={12} color={black}>Price: {item.amount}</Text>
+                <Text fontSize={14} color={'black'}>Quantity: {item.quantity}</Text>
+                <Text fontSize={14} color={'black'}>Price: {item.amount}</Text>
                 <Text fontWeight="bold">
-                  Total: #{formatNumber(Number(item.amount.replace(/,/g, '')) * Number(item.quantity))}
+                  Total: ${formatNumber(Number(item.amount.replace(/,/g, '')) * Number(item.quantity))}
                 </Text>
               </Stack>
-            </Container>
+          </Box>
           ))}
-          <Text fontWeight="bold" fontSize={20}  >Total: #{formattedTotal}</Text>
+          <Text fontWeight={'bold'} fontSize={20}  >Total: #{formattedTotal}</Text>
         </Stack>
-      )}
-    </Box>
+   
+      )}   
+      </Container>
     </>
   );
 };
