@@ -69,9 +69,9 @@ const Cart = () => {
    <>
     <NavSection />
     <Container mt={5}
-    mb={5}
-    ml={5}
-    mr={5}>
+      mb={10}
+      ml={10}
+      mr={10}>
       <Text>Your Cart</Text>
       {cart.length === 0 ? (
         <Text>No items in the cart.</Text>
@@ -90,22 +90,22 @@ const Cart = () => {
                 <Heading size='md'>{item.Title}</Heading>
                 <Button 
                   colorScheme='red' 
-                  size="sm" 
+                  fontSize={14} 
                   onClick={() => removeFromCart(item.cartId)}
                 >
                   Remove
                 </Button>
               </Flex>
               <Stack mt={2} spacing={1}>
-                <Text fontSize="sm" color="gray.600">Quantity: {item.quantity}</Text>
-                <Text fontSize="sm" color="gray.600">Price: {item.amount}</Text>
+                <Text fontSize={12} color={'black'}>Quantity: {item.quantity}</Text>
+                <Text fontSize={12} color={black}>Price: {item.amount}</Text>
                 <Text fontWeight="bold">
                   Total: #{formatNumber(Number(item.amount.replace(/,/g, '')) * Number(item.quantity))}
                 </Text>
               </Stack>
             </Container>
           ))}
-          <Text fontWeight="bold" fontSize="36px"  >Total: ${formattedTotal}</Text>
+          <Text fontWeight="bold" fontSize={20}  >Total: #{formattedTotal}</Text>
         </Stack>
       )}
     </Box>
