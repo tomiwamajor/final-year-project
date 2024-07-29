@@ -78,7 +78,7 @@ const Cart = () => {
       ) : (
         <Stack spacing={4}>
           {cart.map((item, index) => (
-            <Box 
+            <Box>
               key={item.id} 
               p={4} 
               borderWidth='1px' 
