@@ -1,6 +1,6 @@
 "use client"
 // components/Cart.js
-import { Box, Text, Stack, Heading, Divider, Button, Flex } from '@chakra-ui/react';
+import { Box, Text, Stack, Heading, Divider, Button, Flex, Container } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { collection, query, where, getDocs, getFirestore, deleteDoc } from 'firebase/firestore';
 import app from "@/firebase.config"
@@ -68,8 +68,11 @@ const Cart = () => {
   return (
    <>
     <NavSection />
-    <Box>
-      <Heading>Your Cart</Heading>
+    <Container mt={5}
+    mb={5}
+    ml={5}
+    mr={5}>
+      <Text>Your Cart</Text>
       {cart.length === 0 ? (
         <Text>No items in the cart.</Text>
       ) : (
@@ -100,7 +103,7 @@ const Cart = () => {
                   Total: #{formatNumber(Number(item.amount.replace(/,/g, '')) * Number(item.quantity))}
                 </Text>
               </Stack>
-            </Box>
+            </Container>
           ))}
           <Text fontWeight="bold" fontSize="36px"  >Total: ${formattedTotal}</Text>
         </Stack>
