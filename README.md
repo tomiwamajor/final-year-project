@@ -1,4 +1,4 @@
-This is a Next.js project developed by Adetomiwa Adetomiwa Kolapo using HTML, CSS, JavaScript, NextJs app, ChakraUI, Firebase.
+This is a Next.js project developed by Adetomiwa Adetomiwa Kolapo using NextJs, ChakraUI, Firebase.
 
 Open [https://myecom-kappa.vercel.app/](https://myecom-kappa.vercel.app/) with your browser to see the result.
 
