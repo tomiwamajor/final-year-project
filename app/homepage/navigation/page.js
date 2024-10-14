@@ -145,7 +145,7 @@ export default function NavSection() {
             {user ? (
               <>
                 <Text my={5} w='100%' textAlign='center'>
-                  Welcome, {user.displayName || user.email}
+                  {user.displayName || user.email}
                 </Text>
                 <Button variant='ghost' aria-label='Logout' my={5} w='100%' onClick={handleLogout}>
                   Logout
