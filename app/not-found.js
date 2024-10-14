@@ -7,7 +7,7 @@ export default function NotFound() {
     <Center height={"100vh"}>
       <Text fontSize={30}
       textAlign={'center'}
-      >Section does not exist</Text>
+      >Unfortunately, page does not exist</Text>
     </Center>
   );
 }
