@@ -111,7 +111,7 @@ export default function NavSection() {
           overflow={'auto'} 
           flexDir={'column'} 
           display={display}>
-          <Flex justify={'flex-end'}>
+          <Flex justify={'flex-start'}>
             <IconButton mt={2} 
               mr={5}
               marginTop={3} 
