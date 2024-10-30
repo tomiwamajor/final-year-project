@@ -111,13 +111,14 @@ export default function NavSection() {
           overflow={'auto'} 
           flexDir={'column'} 
           display={display}>
-          <Flex justify={'flex-start'}>
-            <IconButton mt={2} 
+          <Flex justify={'flex-end'}>
+            <IconButton 
               mr={5}
               marginTop={3} 
               aria-label="Close Menu" 
               size={'lg'} 
               icon={<CloseIcon/>} 
+              display={['flex', 'flex', 'none', 'none']} 
               onClick={()=>changeDisplay('none')}/> 
           </Flex>
         <Flex flexDir={'column'} 
