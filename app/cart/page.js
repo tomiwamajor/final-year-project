@@ -3,8 +3,10 @@ import { Box, Text, Stack, Heading, Button, Flex, Container, border } from '@cha
 import { useEffect, useState } from 'react';
 import { collection, query, where, getDocs, getFirestore, deleteDoc } from 'firebase/firestore';
 import app from "@/firebase.config"
+import NextLink from "next/link";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import NavSection from '../homepage/navigation/page';
+import CheckoutPage from '../checkout/page';
 
 const formatNumber = (num) => {
   return num.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
@@ -113,19 +115,22 @@ const Cart = () => {
           </Box>
           ))}
           <Text fontWeight={'bold'} fontSize={20}  >Total: #{formattedTotal}</Text>
-          <Button
-          display={'flex'}
-          width={'20%'}
-          backgroundColor={'green'}
-          cursor={'pointer'}
-          pt={10}
-          pb={10}
-          pl={20}
-          pr={20}
-          color={'white'}
-          borderRadius={10}
-          border={'none'}
-          fontSize={14}>Proceed to checkout</Button>
+          <NextLink href={'/checkout'} passHref>
+            <Button as={'a'}
+              aria-label='checkout'
+              display={'flex'}
+              width={'20%'}
+              backgroundColor={'green'}
+              cursor={'pointer'}
+              pt={10}
+              pb={10}
+              pl={20}
+              pr={20}
+              color={'white'}
+              borderRadius={10}
+              border={'none'}
+              fontSize={14}>Proceed to checkout</Button>
+          </NextLink>
         </Stack>
    
       )}   
