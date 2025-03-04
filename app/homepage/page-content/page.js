@@ -61,7 +61,7 @@ export default function PageContent() {
 
   if (isLoading) {
     return(
-      <SkeletonText noOfLines={12} gap="4" />
+      <SkeletonText noOfLines={15} gap="4" />
     )
   }
 
