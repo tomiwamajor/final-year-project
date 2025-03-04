@@ -1,6 +1,6 @@
 "use client"
 
-import { Text, Card, CardBody, CardFooter, Stack, Heading, Divider, ButtonGroup, Button,SimpleGrid } from "@chakra-ui/react";
+import { Text, Card, CardBody, CardFooter, Stack, Heading, Divider, ButtonGroup, Button,SimpleGrid, Box, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import { collection, getDocs, getFirestore, query, doc, setDoc } from "firebase/firestore";
 import React, {useState, useEffect} from "react"
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -59,7 +59,12 @@ export default function PageContent() {
   }, []);
 
   if (isLoading) {
-    return <Text>Loading products...</Text>;
+    return(
+      <Box padding='6' boxShadow='lg' bg='white'>
+        <SkeletonCircle size='10' />
+        <SkeletonText mt='4' noOfLines={15} spacing='4' skeletonHeight='3' />
+      </Box>
+    ) 
   }
 
   const addToCart = async (product) => {
