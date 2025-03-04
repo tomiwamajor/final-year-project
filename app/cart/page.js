@@ -1,5 +1,5 @@
 "use client"
-import { Box, Text, Stack, Heading, Button, Flex, Container } from '@chakra-ui/react';
+import { Box, Text, Stack, Heading, Button, Flex, Container, border } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { collection, query, where, getDocs, getFirestore, deleteDoc } from 'firebase/firestore';
 import app from "@/firebase.config"
@@ -71,9 +71,9 @@ const Cart = () => {
       mb={10}
       ml={10}
       mr={10}>
-      <Text textAlign={'center'}>Your Cart</Text>
+      <Heading textAlign={'center'} fontSize={'20'}>My Cart</Heading>
       {cart.length === 0 ? (
-        <Text textAlign={'center'}>No items in the cart.</Text>
+        <Heading textAlign={'center'}>No items in the cart.</Heading>
       ) : (
         <Stack spacing={4}>
           {cart.map((item, index) => (
@@ -107,12 +107,25 @@ const Cart = () => {
                 <Text fontSize={14} color={'black'}>Quantity: {item.quantity}</Text>
                 <Text fontSize={14} color={'black'}>Price: {item.amount}</Text>
                 <Text fontWeight="bold">
-                  Total: ${formatNumber(Number(item.amount.replace(/,/g, '')) * Number(item.quantity))}
+                  {/* Total: ${formatNumber(Number(item.amount.replace(/,/g, '')) * Number(item.quantity))} */}
                 </Text>
               </Stack>
           </Box>
           ))}
           <Text fontWeight={'bold'} fontSize={20}  >Total: #{formattedTotal}</Text>
+          <Button
+          display={'flex'}
+          width={'20%'}
+          backgroundColor={'green'}
+          cursor={'pointer'}
+          pt={10}
+          pb={10}
+          pl={20}
+          pr={20}
+          color={'white'}
+          borderRadius={10}
+          border={'none'}
+          fontSize={14}>Proceed to checkout</Button>
         </Stack>
    
       )}   
