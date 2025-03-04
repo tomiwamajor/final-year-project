@@ -119,7 +119,7 @@ const Cart = () => {
             <Button as={'a'}
               aria-label='checkout'
               display={'flex'}
-              width={'20%'}
+              width={'40%'}
               backgroundColor={'green'}
               cursor={'pointer'}
               pt={10}
