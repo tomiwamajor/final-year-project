@@ -62,7 +62,7 @@ export default function PageContent() {
     return(
       <Box padding='6' boxShadow='lg' bg='white'>
         <SkeletonCircle size='10' />
-        <SkeletonText mt='4' noOfLines={15} spacing='4' skeletonHeight='3' />
+        <SkeletonText mt='4' noOfLines={14} spacing='4' skeletonHeight='3' />
       </Box>
     ) 
   }
