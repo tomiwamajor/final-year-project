@@ -77,7 +77,7 @@ const Cart = () => {
       {cart.length === 0 ? (
         <Heading textAlign={'center'}>No items in the cart.</Heading>
       ) : (
-        <Stack spacing={4}>
+        <Stack spacing={1}>
           {cart.map((item, index) => (
             <Box
               key={item.id} 
@@ -86,6 +86,8 @@ const Cart = () => {
               borderRadius='lg' 
               boxShadow="md" 
               bg="white"
+              display={'flex'}
+              flexDirection={'column'}
             >
               <Flex justifyContent="space-between" alignItems="center">
                 <Heading size='md'>{item.Title}</Heading>
@@ -100,6 +102,7 @@ const Cart = () => {
                 borderRadius={10}
                 border={'none'}
                 fontSize={14} 
+                transform={'translateY(40%)'}
                 onClick={() => removeFromCart(item.cartId)}
                 >
                   Remove
