@@ -68,7 +68,7 @@ const Cart = () => {
 
   return (
    <>
-    {/* <NavSection /> */}
+    <NavSection />
     <Container mt={5}
       mb={10}
       ml={10}
